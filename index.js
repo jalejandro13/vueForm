@@ -3,7 +3,7 @@ const app = Vue.createApp({
         return {
             informacionForm:[
                 {
-                    etiqueta: 'Nombre:',
+                    etiqueta: 'Nombre',
                     tipo: 'text',
                     respuesta: ''
                 }
@@ -15,8 +15,8 @@ const app = Vue.createApp({
 app.component('input-div', {
     template: `
         <div class="row justify-content-center">
-                <label class="col-auto" for="nombre">{{etiqueta}}</label>
-                <input class="col-6" type="text" id="nombre" name="nombre" >
+                <label class="col-auto" :for="etiqueta">{{ etiqueta }}:</label>
+                <input class="col-6" :type="tipo" :id="etiqueta" :name="etiqueta" >
         </div>
     `,
     data() {
@@ -24,7 +24,7 @@ app.component('input-div', {
             respuesta: ''
         }
     },
-    props: ['etiqueta']
+    props: ['etiqueta', 'tipo', 'modelValue']
 });
 
 app.mount('#app');
