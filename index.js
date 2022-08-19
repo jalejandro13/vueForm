@@ -1,11 +1,21 @@
 const app = Vue.createApp({
-    
+    data() {
+        return {
+            informacionForm:[
+                {
+                    etiqueta: 'Nombre:',
+                    tipo: 'text',
+                    respuesta: ''
+                }
+            ]
+        }
+    },
 });
 
 app.component('input-div', {
     template: `
         <div class="row justify-content-center">
-                <label class="col-auto" for="nombre">Nombre:</label>
+                <label class="col-auto" for="nombre">{{etiqueta}}</label>
                 <input class="col-6" type="text" id="nombre" name="nombre" >
         </div>
     `,
@@ -14,6 +24,7 @@ app.component('input-div', {
             respuesta: ''
         }
     },
+    props: ['etiqueta']
 });
 
 app.mount('#app');
