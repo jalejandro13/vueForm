@@ -25,7 +25,7 @@
 
     <div id="app" v-cloak>
         <form class="container mt-3">
-            <input-div :tipo="informacionForm[0]['tipo']" v-model="informacionForm[0]['respuesta']" :etiqueta="informacionForm[0]['etiqueta']"  />   
+            <input-div v-for="(infoInput, index) in informacionForm" :key="infoInput['etiqueta']" :tipo="infoInput['tipo']" v-model="infoInput['respuesta']" :etiqueta="infoInput['etiqueta']"  />   
         </form>
     </div>
 </body>

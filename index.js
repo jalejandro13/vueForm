@@ -6,6 +6,16 @@ const app = Vue.createApp({
                     etiqueta: 'Nombre',
                     tipo: 'text',
                     respuesta: ''
+                },
+                {
+                    etiqueta: 'Edad',
+                    tipo: 'number',
+                    respuesta: ''
+                },
+                {
+                    etiqueta: 'Animal Favorito',
+                    tipo: 'text',
+                    respuesta: ''
                 }
             ]
         }
