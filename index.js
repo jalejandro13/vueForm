@@ -24,7 +24,7 @@ const app = Vue.createApp({
     methods: {
         agregar(){
             this.elementosAñadidos.push({ nombre : this.informacionForm[0]['respuesta'], edad : this.informacionForm[1]['respuesta'], animal : this.informacionForm[2]['respuesta']});
-            
+
             this.informacionForm.forEach(input => input['respuesta'] = '');
         }
     },
@@ -52,18 +52,18 @@ app.component('input-div', {
 
 app.component('output-div', {
     template: `
-        <table class="container mt-5">
-            <tr class="row text-center">
+        <table class="container respuestas mt-3">
+            <tr class="row text-center mt-1">
                 <td>
                     {{ nombre }}
                 </td>
             </tr>
-            <tr class="row text-center">
+            <tr class="row text-center mt-1">
                 <td>
                     {{ edad }}
                 </td>
             </tr>
-            <tr class="row text-center">
+            <tr class="row text-center mt-1">
                 <td>
                     {{ animal }}
                 </td>

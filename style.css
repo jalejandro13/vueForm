@@ -1,3 +1,7 @@
 [v-cloak]{
     display: none;
 }
+ .respuestas{
+    border-radius: 1rem;
+    background-color: whitesmoke;
+ }
