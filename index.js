@@ -17,14 +17,15 @@ const app = Vue.createApp({
                     tipo: 'text',
                     respuesta: ''
                 }
-            ]
+            ],
+            elementosAñadidos:[]
         }
     },
     methods: {
         agregar(){
-            this.informacionForm.forEach(input => console.log(input['respuesta']));
+            this.elementosAñadidos.push({ nombre : this.informacionForm[0]['respuesta'], edad : this.informacionForm[1]['respuesta'], animal : this.informacionForm[2]['respuesta']});
+            
             this.informacionForm.forEach(input => input['respuesta'] = '');
-            this.informacionForm.forEach(input => console.log(input['respuesta']));
         }
     },
 });
@@ -47,6 +48,29 @@ app.component('input-div', {
             }
         }
     }
+});
+
+app.component('output-div', {
+    template: `
+        <table class="container mt-5">
+            <tr class="row text-center">
+                <td>
+                    {{ nombre }}
+                </td>
+            </tr>
+            <tr class="row text-center">
+                <td>
+                    {{ edad }}
+                </td>
+            </tr>
+            <tr class="row text-center">
+                <td>
+                    {{ animal }}
+                </td>
+            </tr>
+        </table>
+    `,
+    props: ['nombre', 'edad', 'animal']
 });
 
 app.mount('#app');
