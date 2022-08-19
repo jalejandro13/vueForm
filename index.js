@@ -1,14 +1,19 @@
-const app = Vue.createApp({});
+const app = Vue.createApp({
+    
+});
 
-app.component('tag-form', {
+app.component('input-div', {
     template: `
-        <form class="container mt-3">
-            <div class="row justify-content-center">
-                <label for="nombre" class="col-1">Nombre:</label>
-                <input type="text" id="nombre" class="col-6"/>
-            </div>
-        </form>
-    `
+        <div class="row justify-content-center">
+                <label class="col-auto" for="nombre">Nombre:</label>
+                <input class="col-6" type="text" id="nombre" name="nombre" >
+        </div>
+    `,
+    data() {
+        return {
+            respuesta: ''
+        }
+    },
 });
 
 app.mount('#app');
