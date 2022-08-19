@@ -3,7 +3,7 @@ const app = Vue.createApp({
         return {
             informacionForm:[
                 {
-                    etiqueta: 'Nombre:',
+                    etiqueta: 'NombrePrueba:',
                     tipo: 'text',
                     respuesta: ''
                 }
